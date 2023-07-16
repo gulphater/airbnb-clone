@@ -1,11 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar'
+import IndexPage from "./pages/IndexPage"
+import LoginPage from "./pages/LoginPage"
+import Layout from "./Layout"
 function App() {
 
   return (
-    <>
-    <Navbar/>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<IndexPage/>}></Route>
+        <Route path="login" element={<LoginPage/>}></Route>
+      </Route>
+    </Routes>
   )
 }
 
